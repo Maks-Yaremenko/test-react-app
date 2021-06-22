@@ -1,0 +1,19 @@
+@import "styles/config/colors";
+
+.container {
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  max-width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  cursor: pointer;
+  background: $white;
+  margin: auto;
+}
+
+.image {
+  height: 150px;
+  position: relative;
+}

@@ -1,0 +1,23 @@
+$bp_small: 'small';
+$bp_medium: 'medium';
+$bp_large: 'large';
+$bp_extraLarge: 'extraLarge';
+
+$breakpoints: (
+  $bp_small: ( max-width:  480px ),
+  $bp_medium: ( max-width:  768px ),
+  $bp_large: ( max-width: 1024px ),
+  $bp_extraLarge: ( max-width: 1280px )
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
